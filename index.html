@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/index.css" rel="stylesheet">
+        <script src='js/index.js'></script>
+        <meta http-equiv="Content-Language" content="pt_BR">
+        <meta name="theme-color" content="rgb(255, 237, 136);">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">	
+        <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+        <title>Windows 10</title>
+    </head>
+    <body>
+        <div id='work-place'>
+            <div id='background' onclick='closeMenu(), resetApp(), blackIcon()'></div>
+            <div id='bar-shadow'></div>
+            <div id='windows-bar'>
+                <div id='windows-icon-holder'>
+                    <img id='windows-icon' onclick='openMenu()' onmouseover='yellowIcon(this)' onmouseout='blackIcon()' src='img/windows.png'>
+                </div>
+                <div id='hour'>00:00</div>
+                <div id='lang'>POR</div>
+                <div id='internet'>
+                    <img id='internet-icon' onload='testConnection(), horaCerta()' src='img/loading.gif'>
+                </div>
+            </div>
+            <div id='windows-menu'>
+                <div id='left-app-bar'>
+                    <div class='left-app' align='center' style='bottom: 38vh'>
+                        <img src='img/user.jpg' style='border-radius: 50%'>
+                    </div>
+                </div>
+                <div id='left-app-bar'>
+                    <div class='left-app' align='center' style='bottom: 28.5vh'>
+                        <img src='img/document.png'>
+                    </div>
+                </div>
+                <div id='left-app-bar'>
+                    <div class='left-app' align='center' style='bottom: 19vh'>
+                        <img src='img/picture.png'>
+                    </div>
+                </div>
+                <div id='left-app-bar'>
+                    <div class='left-app' align='center' style='bottom: 9.5vh'>
+                        <img src='img/wheel.png'>
+                    </div>
+                </div>
+                <div id='left-app-bar'>
+                    <div class='left-app' align='center' style='bottom: 0vh'>
+                        <img src='img/power.png'>
+                    </div>
+                </div>
+            </div>
+            <div class='app-icon-padding'>
+                <div class='app-icon' id='app-1' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
+                    <img src='img/rafael.png'>
+                    <p>Rafael</p>
+                </div>
+            </div>
+            <div class='app-icon-padding'>
+                <div class='app-icon' id='app-2' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
+                    <img src='img/chrome.png'>
+                    <p>Google Chrome</p>
+                </div>
+            </div>
+            <div class='app-icon-padding'>
+                <div class='app-icon' id='app-3' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
+                    <img src='img/explorer.png'>
+                    <p>Explorador de...</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
