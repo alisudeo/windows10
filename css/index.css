@@ -29,7 +29,7 @@ body{
     position: absolute;
     z-index: 2;
     width: 100vw;
-    height: 5.5vh;
+    height: 6vh;
     bottom: 0vh;
     box-shadow: 0 0 2vh rgba(34, 34, 34, 0.5);
 }
@@ -37,7 +37,7 @@ body{
     position: absolute;
     z-index: 4;
     width: 100vw;
-    height: 5.5vh;
+    height: 6vh;
     bottom: 0vh;
     background-color: rgba(255, 237, 136, 0.8);
     overflow-x: scroll;
@@ -48,7 +48,7 @@ body{
 }
 #windows-bar::-webkit-scrollbar {
     width: 1vh;
-    height: 0.5vh;
+    height: 0vh;
     background: transparent;
 }
 #windows-bar::-webkit-scrollbar-thumb {
@@ -59,7 +59,7 @@ body{
     display: inline-block;
     width: 6vh;
     height: 3.4vh;
-    padding: 1.5vh 2vh 0 0;
+    padding: 1.75vh 2vh 0 0;
     position: absolute;
     z-index: 4;
     right: 11vh;
@@ -73,7 +73,7 @@ body{
     display: inline-block;
     width: 6vh;
     height: 4.1vh;
-    padding: 1.4vh 2vh 0 0;
+    padding: 1.65vh 2vh 0 0;
     font-size: 2.2vh;
     position: absolute;
     z-index: 4;
@@ -84,7 +84,7 @@ body{
     display: inline-block;
     width: 4vh;
     height: 4.1vh;
-    padding: 1.4vh 4vh 0 0;
+    padding: 1.65vh 4vh 0 0;
     font-size: 2.2vh;
     position: absolute;
     z-index: 4;
@@ -92,14 +92,14 @@ body{
     color: #222;
 }
 #windows-icon-holder{
-    height: 5.5vh;
+    height: 6vh;
     width: 9.5vh;
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
 }
 #windows-icon{
-    padding: 1vh 3.5vh 1vh 2.5vh;
+    padding: 1.25vh 3.5vh 1.25vh 2.5vh;
     height: 3.5vh;
     width: 3.5vh;
     cursor: pointer;
@@ -112,7 +112,7 @@ body{
     width: 100vw;
     max-width: 60vh;
     height: 0vh;
-    bottom: 5.5vh;
+    bottom: 6vh;
     background-color: rgba(255, 237, 136, 0.8);
     box-shadow: 0 0 2vh rgba(34, 34, 34, 0.5);
     transition: 0.3s;
@@ -122,6 +122,7 @@ body{
     width: 9.5vh;
     height: 100%;
     background-color: rgba(20, 20, 20, 1);
+    display: inline-block;
 }
 .app-icon{
     width: 14vh;
@@ -132,7 +133,6 @@ body{
     transition: 0.2s;
     position: relative;
     z-index: 1;
-    
 }
 .app-icon-padding{
     padding: 1.4vh;
@@ -151,7 +151,7 @@ body{
 .left-app{
     width: 9.5vh;
     height: 6.750vh;
-    padding-top: 2.750vh;
+    padding-top: 3vh;
     position: absolute;
     z-index: 3;
     cursor: pointer;
@@ -161,5 +161,30 @@ body{
     background-color: rgba(255, 255, 255, 0.1);
 }
 .left-app img{
-    height: 4vh;
+    height: 3.5vh;
+}
+.menu-app{
+    height: 15vh;
+    width: 15vh;
+    background-color: #222;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.menu-app:hover{
+    background-color: #444;
+}
+.menu-app img{
+    height: 6vh;
+    width: 6vh;
+    margin: 2.5vh 0 0 4.5vh;
+}
+.menu-app p{
+    width: 100%;
+    text-align: center;
+    font-size: 1.8vh;
+    padding-top: 0.5vh;
+    color: #fff;
 }

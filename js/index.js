@@ -1,7 +1,21 @@
 function horaCerta(){
     setInterval(() => {
         var date = new Date();
-        document.getElementById('hour').innerHTML = date.getHours() + ':' + date.getMinutes();
+        if(date.getHours() <= 9){
+            var horas = '0' + date.getHours();
+        }
+        else{
+            var horas = date.getHours();
+        }
+
+        if(date.getMinutes() <= 9){
+            var minutos = '0' + date.getMinutes();
+        }
+        else{
+            var minutos = date.getMinutes();
+        }
+
+        document.getElementById('hour').innerHTML = horas + ':' + minutos;
     }, 1000);
 }
 
@@ -17,7 +31,7 @@ function testConnection(){
 }
 
 function openMenu(){
-    document.getElementById('windows-menu').style.height = '94.5vh';
+    document.getElementById('windows-menu').style.height = '94vh';
     document.getElementById('windows-menu').style.opacity = '1';
     document.getElementById('windows-icon').setAttribute('onclick', 'closeMenu()');
     document.getElementById('windows-icon').setAttribute('onmouseout', '');
