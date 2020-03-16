@@ -1,21 +1,67 @@
+function monthString(x){
+    switch(x){
+        case 0:
+            var y = 'Janeiro';
+            break;
+        case 1:
+            var y = 'Fevereiro';
+            break;
+        case 2:
+            var y = 'Março';
+            break;
+        case 3:
+            var y = 'Abril';
+            break;
+        case 4:
+            var y = 'Maio';
+            break;
+        case 5:
+            var y = 'Junho';
+            break;
+        case 6:
+            var y = 'Julho';
+            break;
+        case 7:
+            var y = 'Agosto';
+            break;
+        case 8:
+            var y = 'Setembro';
+            break;
+        case 9:
+            var y = 'Outubro';
+            break;
+        case 10:
+            var y = 'Novembro';
+            break;
+        case 11:
+            var y = 'Dezembro';
+            break;
+        default:
+            var y = 'Mês';
+            break;
+    }
+
+    return y;
+}
+
+function zeroNum(x){
+    if(x <= 9){
+        var y = '0' + x;
+    }
+    else{
+        var y = x;
+    }
+
+    return y;
+}
+
 function horaCerta(){
     setInterval(() => {
         var date = new Date();
-        if(date.getHours() <= 9){
-            var horas = '0' + date.getHours();
-        }
-        else{
-            var horas = date.getHours();
-        }
-
-        if(date.getMinutes() <= 9){
-            var minutos = '0' + date.getMinutes();
-        }
-        else{
-            var minutos = date.getMinutes();
-        }
-
-        document.getElementById('hour').innerHTML = horas + ':' + minutos;
+        console.log(date.getMonth());
+        document.getElementById('lock-hour').innerHTML = zeroNum(date.getHours()) + ':' + zeroNum(date.getMinutes());
+        document.getElementById('lock-date').innerHTML = zeroNum(date.getDate()) + ' de ' + monthString(date.getMonth()) + ' de ' + zeroNum(date.getFullYear());
+        document.getElementById('hour').innerHTML = zeroNum(date.getHours()) + ':' + zeroNum(date.getMinutes());
     }, 1000);
 }
 
@@ -31,6 +77,7 @@ function testConnection(){
 }
 
 function openMenu(){
+    document.getElementById('windows-menu').style.top = '0vh';
     document.getElementById('windows-menu').style.height = '94vh';
     document.getElementById('windows-menu').style.opacity = '1';
     document.getElementById('windows-icon').setAttribute('onclick', 'closeMenu()');
@@ -38,6 +85,7 @@ function openMenu(){
 }
 
 function closeMenu(){
+    document.getElementById('windows-menu').style.top = '100vh';
     document.getElementById('windows-menu').style.height = '0vh';
     document.getElementById('windows-menu').style.opacity = '0';
     document.getElementById('windows-icon').setAttribute('onclick', 'openMenu()');
@@ -81,4 +129,21 @@ function blackIcon(){
     x = document.getElementById('windows-icon');
     x.style.backgroundColor = 'transparent';
     x.setAttribute('src', 'img/windows.png');
+}
+
+function openPassword(x){
+    x.style.top = '-100vh';
+}
+
+function checkPassword(){
+    x = document.getElementById('password-field').value;
+    
+    if(x == 'Minecraftmtbom'){
+        document.getElementById('lock-password').style.top = '-100vh';
+        return false;
+    }
+    else{
+        document.getElementById('password-status').innerHTML = 'Senha incorreta.<br>Por favor, tente novamente.';
+        return false;
+    }
 }
