@@ -12,18 +12,23 @@
         <title>Windows 10</title>
     </head>
     <body>
+        <div id='program-holder' align='center'>
+            <div id='program' align='center'>
+                <div id='program-top-bar' align='left'>
+                    <p id='program-name'><img src='img/chrome.png' id='program-icon'>&nbsp;Google Chrome</p>
+                    <img src='img/close.png' align='right' id='program-close' onclick='closeProgram()'>
+                    <img src='img/s-hint-white.png' align='right' id='program-hint' onclick='openHint(2)'>
+                </div>
+                <div id='program-content'>
+                </div>
+            </div>
+        </div>
         <div id='hint-modal-holder' align='center'>
             <div id='hint-modal' align='center'>
                 <div id='hint-modal-topbar' align='left'>
                     <p>Informação</p>
-                    
                 </div>
                 <div id='hint-modal-content'>
-                    <p>Dados do usuário&nbsp;<img src='img/regedit.png'></p>
-                    <p>Os dados do usuário, como nome, e-mail e senha são armazenados em um lugar chamado de 'Registro do Windows', seu banco de dados. Lá estão presentes, também, dados sobre os programas instalados no computador, sendo eles nativos desse sistema operacional ou não.</p>
-                    <p>Os dados lá guardados são utilizados de diferentes formas, como para verificação e atualização da versão dos programas instalados ou para o login do usuário no computador. A propósito, use 'Windows10' como senha.</p>
-                    <input type='button' value='Entendi' onclick='closeHint()'>
-                    <div style='height: 4vh;'></div>
                 </div>
             </div>
         </div>
@@ -45,7 +50,7 @@
                 <p id='password-status'></p>
             </div>
             <div id='hint-holder' align='center'>
-                <div id='hint' align='center' onclick='openHint()'>
+                <div id='hint' align='center' onclick='openHint(1)'>
                     <img src='img/hint.png'>
                 </div>
             </div>
@@ -56,6 +61,9 @@
             <div id='windows-bar'>
                 <div id='windows-icon-holder'>
                     <img id='windows-icon' onclick='openMenu()' onmouseover='yellowIcon(this)' onmouseout='blackIcon()' src='img/windows.png'>
+                </div>
+                <div id='open-program' align='center'>
+                    <img src='' id='open-program-img'>
                 </div>
                 <div id='hour'>00:00</div>
                 <div id='lang'>POR</div>
@@ -81,7 +89,7 @@
                         <img src='img/power.png'>
                     </div>
                 </div>
-                <div class='menu-app' style='top: 2vh; left: 11.5vh;'>
+                <div class='menu-app' style='top: 2vh; left: 11.5vh;' onclick='openProgram(1)'>
                     <img src='img/chrome.png'><p>Google Chrome</p>
                 </div>
                 <div class='menu-app' style='top: 2vh; left: 28.5vh;'>
@@ -95,7 +103,7 @@
                 </div>
             </div>
             <div class='app-icon-padding'>
-                <div class='app-icon' id='app-2' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
+                <div class='app-icon' id='app-2' align='center' onmouseover='blueBg(this)' onclick='selectBg(this), openProgram(1)' onmouseout='transBg(this)'>
                     <img src='img/chrome.png'>
                     <p>Google Chrome</p>
                 </div>

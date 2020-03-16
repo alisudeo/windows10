@@ -149,7 +149,16 @@ function checkPassword(){
     }
 }
 
-function openHint(){
+function openHint(x){
+    switch(x){
+        case 1:
+            var y = "<p>Dados do usuário&nbsp;<img src='img/regedit.png'></p><p>Os dados do usuário, como nome, e-mail e senha são armazenados em um lugar chamado de 'Registro do Windows', seu banco de dados. Lá estão presentes, também, dados sobre os programas instalados no computador, sendo eles nativos desse sistema operacional ou não.</p><p>Os dados lá guardados são utilizados de diferentes formas, como para verificação e atualização da versão dos programas instalados ou para o login do usuário no computador. A propósito, use 'Windows10' como senha.</p>";
+        case 2:
+            var y = "<p>Internet&nbsp;<img src='img/internet-globe.png'></p><p>A internet nada mais é do que um monte de cabos ligando máquinas à servidores que, por sua vez, se ligam a outras máquinas, compartilhando informações entre si.</p><p>O google, serviço de pesquisa mundialmente conhecido, se parece mais com uma biblioteca, na verdade. Ele indexa os arquivos, como fotos e páginas, presentes nos servidores e exibe os que se relacionam com a pesquisa feita pelo usuário.</p><p>As páginas lidas pelo navegador se parecem com blocos de textos cheios de comandos, que dizem ao navegador onde, como e o que exibir. Existem vários navegadores e cada um deles tem sua própria maneira de customizar o que é exibido para melhor entendimento e agrado do usuário, sendo o mais famoso o Google Chrome.</p><p>Assim como os humanos, máquinas também possuem suas linguas e cada uma delas possui o mesmo proósito: dizer ao computador o que fazer. As linguagens, como são chamadas,usadas para se comunicar com os navegadores são, principalmente, HTML, CSS e JavaScript. Cada uma delas tem sua própria função, sendo elas: O HTML diz o que vai ser exibido; O CSS diz como e onde vai ser exibido; E o JavaScript muda o que está presente no CSS conforme a navegação do usuário pela página, dando-a vida.</p>";
+    }
+
+    document.getElementById('hint-modal-content').innerHTML = y + "<input type='button' value='Entendi' onclick='closeHint()'><div style='height: 4vh;'></div>";
+
     document.getElementById('hint-modal-holder').style.display = 'block';
     setTimeout(() => {
         document.getElementById('hint-modal').style.opacity = '1';
@@ -160,6 +169,35 @@ function closeHint(){
     document.getElementById('hint-modal').style.opacity = '0';
     setTimeout(() => {
         document.getElementById('hint-modal-holder').style.display = 'none';
-        document.getElementById('password-field').focus();
     }, 400);
+    document.getElementById('hint-modal-content').innerHTML = '';
+}
+
+function openProgram(x){
+    switch(x){
+        case 1:
+            var w = 'img/chrome.png';
+            var y = "<img src='img/google.png' id='google-logo'><input type='text' id='google-search' value='Guaxinins lindos' onclick='this.blur()' onfocus='this.blur()'><div class='result-holder'><img src='https://i.pinimg.com/originals/86/f6/8e/86f68eea9858f4e6eed3a7fa8c7a4854.jpg' class='google-result'></div><div class='result-holder'><img src='https://previews.123rf.com/images/a41cats/a41cats1211/a41cats121100055/16385155-cute-raccoon-on-green-grass-nice-close-up-a.jpg' class='google-result'></div><div class='result-holder'><img src='https://i.ytimg.com/vi/IRdivT8pcl4/maxresdefault.jpg' class='google-result'></div>";
+            var z = "openHint(2)";
+    }
+
+    document.getElementById('open-program').style.opacity = '1';
+    document.getElementById('open-program-img').setAttribute('src', w);
+    document.getElementById('program-content').innerHTML = y;
+    document.getElementById('program-hint').setAttribute('onclick', z);
+
+    document.getElementById('program-holder').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('program').style.opacity = '1';
+    }, 10);
+}
+
+function closeProgram(){
+    document.getElementById('program').style.opacity = '0';
+    document.getElementById('open-program').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('program-holder').style.display = 'none';
+        document.getElementById('open-program-img').setAttribute('src', '');
+    }, 400);
+    document.getElementById('program-content').innerHTML = '';
 }

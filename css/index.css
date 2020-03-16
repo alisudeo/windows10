@@ -16,6 +16,11 @@ body{
     font-family: MSS;
     src: url('../fonts/MSS.ttf');
 }
+@keyframes blink{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
 @keyframes swing{
     0%{margin-left: -2vh;}
     10%{margin-left: 2vh;}
@@ -34,6 +39,7 @@ body{
 #work-place{
     width: 100vw;
     height: 100vh;
+    transition: 0.4s;
 }
 #bar-shadow{
     position: absolute;
@@ -65,13 +71,28 @@ body{
     background:rgb(20, 20, 20);
     border-radius: 1vh;
 }
+#open-program{
+    height: 5.5vh;
+    width: 6vh;
+    border-bottom: 0.5vh solid #222;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: 0.4s;
+    opacity: 0;
+}
+#open-program img{
+    height: 3.5vh;
+    width: 3.5vh;
+    padding-top: 1.25vh;
+}
 #internet{
     display: inline-block;
     width: 6vh;
-    height: 3.4vh;
+    height: 3vh;
     padding: 1.75vh 2vh 0 0;
     position: absolute;
-    z-index: 4;
+    z-index: 5;
     right: 11vh;
 }
 #internet img{
@@ -268,6 +289,7 @@ body{
     background-size: 3.5vh;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 #password-status{
     margin-left: -2vh;
@@ -330,9 +352,10 @@ body{
     height: 94vh;
     padding-top: 6vh;
     position: absolute;
-    z-index: 40;
+    z-index: 60;
     display: none;
     top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 #hint-modal{
     max-width: 120vh;
@@ -357,12 +380,6 @@ body{
     padding: 1.1vh 0 0 2vh;
     width: 18vh;
     font-size: 2.5vh;
-}
-#hint-modal-topbar img{
-    height: 6vh;
-    width: 6vh;
-    background-color: rgb(221, 16, 16);
-    display: inline-block;
 }
 #hint-modal-content{
     width: 100%;
@@ -413,4 +430,112 @@ body{
 }
 #hint-modal-content::-webkit-scrollbar-thumb {
     background:#fff;
+}
+#program-holder{
+    width: 100vw;
+    height: 90vh;
+    padding-top: 10vh;
+    position: absolute;
+    z-index: 50;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#program{
+    max-width: 120vh;
+    width: 90vw;
+    height: 80vh;
+    transition: 0.4s;
+    background: #222;
+    opacity: 0;
+    border: 0.3vh solid rgba(255, 237, 136, 1);
+    border-top: none;
+    color: #fff;
+    font-size: 4vh;
+    box-shadow: 0 0 2vh rgba(34, 34, 34, 0.5);
+}
+#program-top-bar{
+    width: 100%;
+    height: 6vh;
+    background-color: rgba(255, 237, 136, 1);
+    color: #222;
+}
+#program-top-bar p{
+    padding: 1.1vh 0 0 2vh;
+    width: 26vh;
+    font-size: 2.5vh;
+    display: inline-block;
+}
+#program-icon{
+    height: 4vh;
+    width: 4vh;
+    display: inline-block;
+    vertical-align: -1.1vh;
+}
+#program-close{
+    height: 4.5vh;
+    width: 4.5vh;
+    display: inline-block;
+    background: rgb(238, 7, 7);
+    cursor: pointer;
+}
+#program-hint{
+    height: 4.5vh;
+    width: 4.5vh;
+    display: inline-block;
+    cursor: pointer;
+    animation: blink 3s infinite;
+    background-color: rgb(59, 95, 255);
+}
+#program-content{
+    width: 100%;
+    height: 74vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+#program-content::-webkit-scrollbar {
+    width: 0.8vh;
+    background: transparent;
+}
+#program-content::-webkit-scrollbar-thumb {
+    background:#fff;
+}
+#google-logo{
+    margin-top: 10vh;
+    width: 28vh;
+}
+#google-search{
+    width: 60%;
+    min-width: 28vh;
+    height: 7vh;
+    border-radius: 10vh;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 2vh rgba(255, 255, 255, 0.3);
+    display: block;
+    margin-top: 2vh;
+    font-size: 3vh;
+    color: #333;
+    padding: 0 3vh 0 3vh;
+    background-image: url('../img/search.png');
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: 3vh;
+    caret-color: transparent;
+}
+.google-result{
+    width: 100%;
+    border-radius: 2vh;
+    box-shadow: 0 0 2vh rgba(255, 255, 255, 0.3);
+}
+.result-holder{
+    padding: 0 4vh 0 4vh;
+    width: 24% !important;
+    min-width: 24vh !important;
+    margin-top: 6vh;
+    display: inline-block;
+    vertical-align: top;
+}
+.result-holder:nth-of-type(2){
+    padding: 0;
 }
