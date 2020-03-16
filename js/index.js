@@ -133,12 +133,13 @@ function blackIcon(){
 
 function openPassword(x){
     x.style.top = '-100vh';
+    document.getElementById('password-field').focus();
 }
 
 function checkPassword(){
     x = document.getElementById('password-field').value;
     
-    if(x == 'Minecraftmtbom'){
+    if(x == 'Windows10'){
         document.getElementById('lock-password').style.top = '-100vh';
         return false;
     }
@@ -146,4 +147,19 @@ function checkPassword(){
         document.getElementById('password-status').innerHTML = 'Senha incorreta.<br>Por favor, tente novamente.';
         return false;
     }
+}
+
+function openHint(){
+    document.getElementById('hint-modal-holder').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('hint-modal').style.opacity = '1';
+    }, 10);
+}
+
+function closeHint(){
+    document.getElementById('hint-modal').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('hint-modal-holder').style.display = 'none';
+        document.getElementById('password-field').focus();
+    }, 400);
 }

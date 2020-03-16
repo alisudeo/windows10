@@ -12,6 +12,21 @@
         <title>Windows 10</title>
     </head>
     <body>
+        <div id='hint-modal-holder' align='center'>
+            <div id='hint-modal' align='center'>
+                <div id='hint-modal-topbar' align='left'>
+                    <p>Informação</p>
+                    
+                </div>
+                <div id='hint-modal-content'>
+                    <p>Dados do usuário&nbsp;<img src='img/regedit.png'></p>
+                    <p>Os dados do usuário, como nome, e-mail e senha são armazenados em um lugar chamado de 'Registro do Windows', seu banco de dados. Lá estão presentes, também, dados sobre os programas instalados no computador, sendo eles nativos desse sistema operacional ou não.</p>
+                    <p>Os dados lá guardados são utilizados de diferentes formas, como para verificação e atualização da versão dos programas instalados ou para o login do usuário no computador. A propósito, use 'Windows10' como senha.</p>
+                    <input type='button' value='Entendi' onclick='closeHint()'>
+                    <div style='height: 4vh;'></div>
+                </div>
+            </div>
+        </div>
         <div id='lock-background' onclick='openPassword(this)'>
             <p id='lock-hour'>00:00</p>
             <p id='lock-date'>24 de dezembro de 1990</p>
@@ -21,7 +36,7 @@
             <div id='user-picture' align='center'>
                 <img src='img/user.jpg' style='border-radius: 50%'>
             </div>
-            <p id='user-name'>Alison</p>
+            <p id='user-name'>Guaxinim</p>
             <div id='password-holder' align='center'>
                 <form onsubmit='return checkPassword()'>
                     <input type='password' placeholder='Senha' id='password-field'>
@@ -30,7 +45,7 @@
                 <p id='password-status'></p>
             </div>
             <div id='hint-holder' align='center'>
-                <div id='hint' align='center'>
+                <div id='hint' align='center' onclick='openHint()'>
                     <img src='img/hint.png'>
                 </div>
             </div>
