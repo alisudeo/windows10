@@ -268,5 +268,5 @@ window.onload = function(){
             document.getElementById('lock-hour').style.width = '38vh';
             document.getElementById('lock-date').style.width = '38vh';
         }, 500);
-    }, 500);
+    }, 800);
 };
