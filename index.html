@@ -12,12 +12,16 @@
         <title>Windows 10</title>
     </head>
     <body>
+        <div id='boot' align='center'>
+            <img src='img/windows-yellow.png'>
+            <img src='img/boot-load.gif'>
+        </div>
         <div id='program-holder' align='center'>
             <div id='program' align='center'>
-                <div id='program-top-bar' align='left'>
-                    <p id='program-name'><img src='img/chrome.png' id='program-icon'>&nbsp;Google Chrome</p>
-                    <img src='img/close.png' align='right' id='program-close' onclick='closeProgram()'>
-                    <img src='img/s-hint-white.png' align='right' id='program-hint' onclick='openHint(2)'>
+                <div class='program-top-bar' align='left'>
+                    <p class='program-name'><img src='img/chrome.png' class='program-icon'>&nbsp;Google Chrome</p>
+                    <img src='img/close.png' align='right' class='program-close' onclick='closeProgram()'>
+                    <img src='img/hint.png' align='right' id='program-hint' class='program-hint' onclick='openHint(2)'>
                 </div>
                 <div id='program-content'>
                 </div>
@@ -39,7 +43,7 @@
         <div id='lock-password' align='center'>
             <div id='password-background'></div>
             <div id='user-picture' align='center'>
-                <img src='img/user.jpg' style='border-radius: 50%'>
+                <img src='img/user.png' style='border-radius: 50%'>
             </div>
             <p id='user-name'>Guaxinim</p>
             <div id='password-holder' align='center'>
@@ -49,9 +53,215 @@
                 <div id='password-go' onclick='checkPassword()'></div>
                 <p id='password-status'></p>
             </div>
-            <div id='hint-holder' align='center'>
-                <div id='hint' align='center' onclick='openHint(1)'>
+            <div id='shortcut-holder' align='center'>
+                <div class='shortcut' id='hint' align='center' onclick='openHint(1)'>
                     <img src='img/hint.png'>
+                </div>
+                <div class='shortcut' id='keyboard' align='center' onclick='openKeyboard()'>
+                    <img src='img/keyboard.png'>
+                </div>
+            </div>
+            <div id='keyboard-modal-holder' align='center'>
+                <div id='keyboard-modal' align='center'>
+                    <div class='program-top-bar' align='left'>
+                        <p class='program-name'><img src='img/keyboard-black.png' class='program-icon'>&nbsp;Teclado virtual</p>
+                        <img src='img/close.png' align='right' class='program-close' onclick='closeKeyboard()'>
+                        <img src='img/hint.png' align='right' class='program-hint' onclick='openHint(3)'>
+                    </div>
+                    <div id='keyboard-modal-content'>
+                        <input type='text' id='keyboard-password'>
+                        <div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    0
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    1
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    2
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    3
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    4
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    5
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    6
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    7
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    8
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    9
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' style='width: 22vh' onclick='removeKey()'>
+                                    Backspace
+                                </div>
+                            </div>
+                        <div>
+                        </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    A
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    B
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    C
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    D
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    E
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    F
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    G
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    H
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    I
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    J
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    K
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    L
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    M
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    N
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    O
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    P
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    Q
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    R
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    S
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    T
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    U
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    V
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    W
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    X
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    Y
+                                </div>
+                            </div>
+                            <div class='key-holder'>
+                                <div class='key' onclick='addKey(this)'>
+                                    Z
+                                </div>
+                            </div>
+                        </div>
+                        <input type='button' value='Confirmar' onclick='closeKeyboard()'>
+                        <div style='height: 4vh;'></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,13 +278,13 @@
                 <div id='hour'>00:00</div>
                 <div id='lang'>POR</div>
                 <div id='internet'>
-                    <img id='internet-icon' onload='testConnection(), horaCerta()' src='img/loading.gif'>
+                    <img id='internet-icon' onload='testConnection()' src='img/loading.gif'>
                 </div>
             </div>
             <div id='windows-menu'>
                 <div id='left-app-bar'>
                     <div class='left-app' align='center' style='bottom: 38vh'>
-                        <img src='img/user.jpg' style='border-radius: 50%'>
+                        <img src='img/user.png' style='border-radius: 50%'>
                     </div>
                     <div class='left-app' align='center' style='bottom: 28.5vh'>
                         <img src='img/document.png'>
@@ -85,7 +295,7 @@
                     <div class='left-app' align='center' style='bottom: 9.5vh'>
                         <img src='img/wheel.png'>
                     </div>
-                    <div class='left-app' align='center' style='bottom: 0vh'>
+                    <div class='left-app' align='center' style='bottom: 0vh' onclick='lockScreen()'>
                         <img src='img/power.png'>
                     </div>
                 </div>
@@ -98,7 +308,7 @@
             </div>
             <div class='app-icon-padding'>
                 <div class='app-icon' id='app-1' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
-                    <img src='img/rafael.png'>
+                    <img src='img/lixeira.png'>
                     <p>Lixeira</p>
                 </div>
             </div>
@@ -115,5 +325,6 @@
                 </div>
             </div>
         </div>
+        <div id='final-load'></div>
     </body>
 </html>
