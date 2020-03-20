@@ -138,8 +138,8 @@ function blackIcon(){
     x.setAttribute('src', 'img/windows.png');
 }
 
-function openPassword(x){
-    x.style.top = '-100vh';
+function openPassword(){
+    document.getElementById('lock-holder').style.top = '-100vh';
     document.getElementById('password-field').focus();
 }
 
@@ -160,12 +160,15 @@ function openHint(x){
     switch(x){
         case 1:
             var y = "<p>Dados do usuário&nbsp;<img src='img/regedit.png'></p><p>Os dados do usuário, como nome, e-mail e senha são armazenados em um lugar chamado de 'Registro do Windows', seu banco de dados. Lá estão presentes, também, dados sobre os programas instalados no computador, sendo eles nativos desse sistema operacional ou não.</p><p>Os dados lá guardados são utilizados de diferentes formas, como para verificação e atualização da versão dos programas instalados ou para o login do usuário no computador. A propósito, use 'Windows10' como senha.</p>";
-            break;
+        break;
         case 2:
             var y = "<p>Internet&nbsp;<img src='img/internet-globe.png'></p><p>A internet nada mais é do que um monte de cabos ligando máquinas à servidores que, por sua vez, se ligam a outras máquinas, compartilhando informações entre si.</p><p>O google, serviço de pesquisa mundialmente conhecido, se parece mais com uma biblioteca, na verdade. Ele indexa os arquivos, como fotos e páginas, presentes nos servidores e exibe os que se relacionam com a pesquisa feita pelo usuário.</p><p>As páginas lidas pelo navegador se parecem com blocos de textos cheios de comandos, que dizem ao navegador onde, como e o que exibir. Existem vários navegadores e cada um deles tem sua própria maneira de customizar o que é exibido para melhor entendimento e agrado do usuário, sendo o mais famoso o Google Chrome.</p><p>Assim como os humanos, máquinas também possuem suas linguas e cada uma delas possui o mesmo proósito: dizer ao computador o que fazer. As linguagens, como são chamadas,usadas para se comunicar com os navegadores são, principalmente, HTML, CSS e JavaScript. Cada uma delas tem sua própria função, sendo elas: O HTML diz o que vai ser exibido; O CSS diz como e onde vai ser exibido; E o JavaScript muda o que está presente no CSS conforme a navegação do usuário pela página, dando-a vida.</p>";
-            break;
+        break;
         case 3:
             var y = "<p>Drivers&nbsp;<img src='img/mouse.png'></p><p>Uma das muitas funções de um sistema operacional é organizar os drivers do usuário/computador, garantindo a comunicação entre o usuário, por meio do próprio SO, e os programas nele presentes.</p><p>São os drivers, por exemplo, os responsáveis por requisitarem que a impressora imprima o que foi pedido pelo usuário, ou por fazer com que as teclas digitas no teclado sejam interpretadas corretamente pelo Sistema Operacional.</p><p>Imprevistos acontecem e periféricos quebram. Quando um equipamento externo, utilizado pelo usuário, deixa de funcionar corretamente, são dadas opções alternativas ao utilizador, pelo Sistema Operacional, para que a interação ainda seja possível. O teclado virtual é uma função de acessibilidade presente no Windows, desde a versão XP e foi introduzido com o propósito de substituir o teclado físico, caso deixe de funcionar.</p>";
+        case 4:
+            var y = "<p>Instruções&nbsp;<img src='img/hint.png'></p><p>Este é um projeto criado com o intuito de ensinar, parcialmente, o propósito de um Sistema Operacional e como este funciona para um usuário leigo, ou com pouco conhecimento acerca de tecnologia. Há botões de ajuda espalhados pela página, um ponto de interrogação. Estes botões contém informações sobre os programas e sobre as funções do site.</p><p>Não hesite em pedir informação!</p>";
+        break;
     }
 
     document.getElementById('hint-modal-content').innerHTML = y + "<input type='button' value='Entendi' onclick='closeHint()'><div style='height: 4vh;'></div>";
@@ -260,6 +263,10 @@ function lockScreen(){
     document.getElementById('lock-password').style.top = '0vh';
 }
 
+function notificationOff(x){
+    x.setAttribute('src', 'img/bell.png');
+}
+
 window.onload = function(){
     horaCerta(); 
     setTimeout(() => {
@@ -267,6 +274,7 @@ window.onload = function(){
         setTimeout(() => {
             document.getElementById('lock-hour').style.width = '38vh';
             document.getElementById('lock-date').style.width = '38vh';
+            document.getElementById('notification-holder').style.opacity = '1';
         }, 500);
     }, 8000);
 };

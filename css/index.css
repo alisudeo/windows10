@@ -16,9 +16,14 @@ body{
     font-family: MSS;
     src: url('../fonts/MSS.ttf');
 }
+@keyframes lock-blink{
+    0%{opacity: 1; background: rgba(19, 61, 139, 0.6);}
+    50%{opacity: 0.6; background: none;}
+    100%{opacity: 1; background: rgba(19, 61, 139, 0.6);}
+}
 @keyframes blink{
     0%{opacity: 1;}
-    50%{opacity: 0;}
+    50%{opacity: 0.4;}
     100%{opacity: 1;}
 }
 @keyframes swing{
@@ -62,7 +67,7 @@ body{
     z-index: 0;
     background-image: url('../img/lock-background.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 87%;
     width: 100vw;
     height: 100vh;
 }
@@ -174,7 +179,7 @@ body{
     max-width: 60vh;
     height: 0vh;
     top: 100vh;
-    background-color: rgba(255, 237, 136, 0.6);
+    background-color: rgba(255, 237, 136, 0.7);
     box-shadow: 0 0 2vh rgba(34, 34, 34, 0.5);
     transition: 0.3s;
     opacity: 0;
@@ -256,7 +261,7 @@ body{
     z-index: 20;
     background-image: url('../img/lock-background.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 87%;
     top: 0vh;
     width: 100vw;
     height: 100vh;
@@ -331,7 +336,7 @@ body{
 #shortcut-holder{
     width: 100vw;
     height: 8vh;
-    top: 92vh;
+    bottom: 0;
     position: absolute;
     z-index: 22;
 }
@@ -352,31 +357,39 @@ body{
     width: 5vh;
     padding-top: 1.5vh;
 }
-#lock-background{
+#lock-holder{
     position: absolute;
     z-index: 30;
+    width: 100vw;
+    height: 100vh;
+    top: 0vh;
+    transition: 0.4s;
+}
+#lock-background{
+    position: absolute;
+    z-index: 31;
     background-image: url('../img/lock-background.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 87%;
     width: 100vw;
     height: 100vh;
     top: 0vh;
     cursor: pointer;
-    transition: 0.4s;
 }
 #lock-hour{
     position: absolute;
-    z-index: 31;
+    z-index: 32;
     left: 4vh;
     top: 78vh;
     font-size: 8vh;
     width: 0;
     transition: 1s;
     overflow: hidden;
+    color: #fff;
 }
 #lock-date{
     position: absolute;
-    z-index: 31;
+    z-index: 32;
     left: 4vh;
     top: 87vh;
     font-size: 4vh;
@@ -384,6 +397,7 @@ body{
     white-space: nowrap;
     transition: 1s;
     overflow: hidden;
+    color: #fff;
 }
 #hint-modal-holder{
     width: 100vw;
@@ -681,4 +695,25 @@ body{
 .key:hover{
     color: #222;
     background: #fff;
+}
+#notification-holder{
+    position: absolute;
+    z-index: 32;
+    top: 68vh;
+    left: 4vh;
+    opacity: 0;
+    transition: 1s;
+    height: 8vh;
+    width: 8vh;
+}
+#notification-holder img{
+    padding: 1.5vh;
+    height: 5vh;
+    width: 5vh;
+    transition: 0.4s;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+#notification-holder img:hover{
+    background: rgba(255, 255, 255, 0.4);
 }

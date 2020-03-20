@@ -36,14 +36,18 @@
                 </div>
             </div>
         </div>
-        <div id='lock-background' onclick='openPassword(this)'>
+        <div id='lock-holder'>
+            <div id='lock-background' onclick='openPassword()'></div>
+            <div id='notification-holder' onclick='openHint(4)'>
+                <img src='img/notification.png' onclick='notificationOff(this)'>
+            </div>
             <p id='lock-hour'>00:00</p>
             <p id='lock-date'>24 de dezembro de 1990</p>
         </div>
         <div id='lock-password' align='center'>
             <div id='password-background'></div>
             <div id='user-picture' align='center'>
-                <img src='img/user.png' style='border-radius: 50%'>
+                <img src='img/user.jpg' style='border-radius: 50%'>
             </div>
             <p id='user-name'>Guaxinim</p>
             <div id='password-holder' align='center'>
@@ -54,7 +58,7 @@
                 <p id='password-status'></p>
             </div>
             <div id='shortcut-holder' align='center'>
-                <div class='shortcut' id='hint' align='center' onclick='openHint(1)'>
+                <div class='shortcut' id='hint' align='center' style='animation: lock-blink 3s infinite' onclick='openHint(1)'>
                     <img src='img/hint.png'>
                 </div>
                 <div class='shortcut' id='keyboard' align='center' onclick='openKeyboard()'>
@@ -71,191 +75,193 @@
                     <div id='keyboard-modal-content'>
                         <input type='text' id='keyboard-password'>
                         <div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    0
+                            <div style='width: 90%'>
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        0
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    1
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        1
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    2
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        2
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    3
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        3
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    4
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        4
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    5
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        5
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    6
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        6
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    7
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        7
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    8
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        8
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    9
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        9
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' style='width: 22vh' onclick='removeKey()'>
-                                    Backspace
+                                <div class='key-holder'>
+                                    <div class='key' style='width: 22vh' onclick='removeKey()'>
+                                        Backspace
+                                    </div>
                                 </div>
+                            <div>
                             </div>
-                        <div>
-                        </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    A
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        A
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    B
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        B
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    C
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        C
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    D
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        D
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    E
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        E
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    F
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        F
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    G
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        G
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    H
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        H
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    I
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        I
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    J
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        J
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    K
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        K
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    L
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        L
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    M
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        M
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    N
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        N
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    O
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        O
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    P
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        P
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    Q
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        Q
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    R
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        R
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    S
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        S
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    T
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        T
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    U
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        U
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    V
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        V
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    W
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        W
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    X
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        X
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    Y
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        Y
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='key-holder'>
-                                <div class='key' onclick='addKey(this)'>
-                                    Z
+                                <div class='key-holder'>
+                                    <div class='key' onclick='addKey(this)'>
+                                        Z
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +290,7 @@
             <div id='windows-menu'>
                 <div id='left-app-bar'>
                     <div class='left-app' align='center' style='bottom: 38vh'>
-                        <img src='img/user.png' style='border-radius: 50%'>
+                        <img src='img/user.jpg' style='border-radius: 50%'>
                     </div>
                     <div class='left-app' align='center' style='bottom: 28.5vh'>
                         <img src='img/document.png'>
