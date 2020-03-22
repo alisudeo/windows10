@@ -3,6 +3,7 @@
     padding: 0;
     outline: none;
     font-family: MSS;
+    scroll-behavior: smooth;
 }
 a, a:link, a:visited{
     text-decoration: none;
@@ -18,6 +19,10 @@ body{
 @font-face{
     font-family: MSS;
     src: url('../fonts/MSS.ttf');
+}
+@font-face{
+    font-family: MSDOS;
+    src: url('../fonts/MSDOS.ttf');
 }
 @keyframes lock-blink{
     0%{opacity: 1; background: rgba(19, 61, 139, 0.6);}
@@ -249,7 +254,7 @@ body{
 .menu-app img{
     height: 6vh;
     width: 6vh;
-    margin: 2.5vh 0 0 4.5vh;
+    margin-top: 2.5vh;
 }
 .menu-app p{
     width: 100%;
@@ -748,6 +753,7 @@ body{
 .file-holder{
     padding: 2vh 1vh 0 1vh;
     display: inline-block;
+    vertical-align: middle;
 }
 .explorer-file{
     height: 14vh;
@@ -770,4 +776,45 @@ body{
     font-size: 2vh;
     line-height: 2.5vh;
     color: #fff;
+}
+#dos-holder{
+    position: absolute;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+#dos{
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+    background-color: #000;
+    color: #eee;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    opacity: 0;
+}
+#dos p{
+    width: 80%;
+    padding: 4vh 0 2vh 2vh;
+    font-size: 3vh;
+    line-height: 4.2vh;
+    font-family: MSDOS !important;
+}
+#dos::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+#dos::-webkit-scrollbar {
+    width: 1vh;
+    background: transparent;
+}
+#dos::-webkit-scrollbar-thumb {
+    background: #eee;
+}
+.user-opt{
+    font-family: MSDOS !important;
+    text-decoration: underline;
+    cursor: pointer;
 }

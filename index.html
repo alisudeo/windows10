@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link href="css/index.css" rel="stylesheet">
         <script src='js/index.js'></script>
+        <script src='js/dos.js'></script>
         <meta http-equiv="Content-Language" content="pt_BR">
         <meta name="theme-color" content="rgb(255, 237, 136);">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -289,27 +290,27 @@
             </div>
             <div id='windows-menu'>
                 <div id='left-app-bar'>
-                    <div class='left-app' align='center' style='bottom: 38vh'>
+                    <div class='left-app' align='center' style='bottom: 28.5vh'>
                         <img src='img/user.jpg' style='border-radius: 50%'>
                     </div>
-                    <div class='left-app' align='center' style='bottom: 28.5vh'>
+                    <div class='left-app' align='center' style='bottom: 19vh' onclick='openProgram(2), openFolder(1)'>
                         <img src='img/document.png'>
                     </div>
-                    <div class='left-app' align='center' style='bottom: 19vh'>
+                    <div class='left-app' align='center' style='bottom: 9.5vh' onclick='openProgram(2), openFolder(3)'>
                         <img src='img/picture.png'>
-                    </div>
-                    <div class='left-app' align='center' style='bottom: 9.5vh'>
-                        <img src='img/wheel.png'>
                     </div>
                     <div class='left-app' align='center' style='bottom: 0vh' onclick='lockScreen()'>
                         <img src='img/power.png'>
                     </div>
                 </div>
-                <div class='menu-app' style='top: 2vh; left: 11.5vh;' onclick='openProgram(1)'>
+                <div align='center' class='menu-app' style='top: 2vh; left: 11.5vh;' onclick='openProgram(1)'>
                     <img src='img/chrome.png'><p>Google Chrome</p>
                 </div>
-                <div class='menu-app' style='top: 2vh; left: 28.5vh;'>
+                <div align='center' class='menu-app' style='top: 2vh; left: 28.5vh;' onclick='openProgram(2)'>
                     <img src='img/explorer.png'><p>Explorador de arquivo</p>
+                </div>
+                <div align='center' class='menu-app' style='top: 19vh; left: 11.5vh;' onclick='openDOS()'>
+                    <img src='img/dos.png'><p>Não clique.</p>
                 </div>
             </div>
             <div class='app-icon-padding'>
@@ -329,6 +330,10 @@
                     <img src='img/explorer.png'>
                     <p>Explorador de...</p>
                 </div>
+            </div>
+        </div>
+        <div id='dos-holder'>
+            <div id='dos'>
             </div>
         </div>
         <div id='final-load'></div>

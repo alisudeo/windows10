@@ -169,6 +169,9 @@ function openHint(x){
         case 4:
             var y = "<p>Instruções&nbsp;<img src='img/hint.png'></p><p>Este é um projeto criado com o intuito de ensinar, parcialmente, o propósito de um Sistema Operacional e como este funciona para um usuário leigo, ou com pouco conhecimento acerca de tecnologia. Há botões de ajuda espalhados pela página, um ponto de interrogação. Estes botões contém informações sobre os programas e sobre as funções do site.</p><p>Não hesite em pedir informação!</p>";
         break;
+        case 5:
+            var y = "<p>Sistemas de arquivos&nbsp;<img src='img/folder.png'></p><p>Tanto o armazenamento quanto a organização dos arquivos pessoais do usuário se dão, também, pelo Sistema Operacional que, por conta do Sistema de Arquivo, consegue gravar os arquivos em um HD(Hard Drive) e locálizá-los, posteriormente.</p><p>Cada sistema operacional lida com um sistema de arquivos diferente e cada sistema de arquivos possui as suas peculiaridades, como limitações, qualidade, velocidade, gerenciamento de espaço, entre outras características. É o sistema de arquivos que define como os bytes que compõem um arquivo serão armazenados no disco e de que forma o sistema operacional terá acesso aos dados.</p><p>No Windows, é usado o sistema NTFS por diversos motivos, sendo um deles a sua capacidade de recuperação: em caso de falhas, como o desligamento repentino do computador, o NTFS é capaz de reverter os dados à condição anterior ao incidente. Isso é possível, em parte, porque, durante o processo de boot, o sistema operacional consulta um arquivo de log que registra todas as operações efetuadas e entra em ação ao identificar nele os pontos problemáticos.</p>";
+        break;
     }
 
     document.getElementById('hint-modal-content').innerHTML = y + "<input type='button' value='Entendi' onclick='closeHint()'><div style='height: 4vh;'></div>";
@@ -199,7 +202,7 @@ function openProgram(x){
             var v = 'Explorador de arquivos';
             var w = 'img/explorer.png';
             var y = "<div id='explorer-address'><p>>>Exibindo todos os arquivos</p></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(1)'><img src='img/folder.png'><p>Documentos</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(2)'><img src='img/folder.png'><p>Download</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(3)'><img src='img/folder.png'><p>Fotos</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(4)'><img src='img/folder.png'><p>Músicas</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(5)'><img src='img/folder.png'><p>Vídeos</p></div></div>";
-            var z = "openHint(2)";
+            var z = "openHint(5)";
         break;
     }
 
@@ -278,19 +281,19 @@ function notificationOff(x){
 function openFolder(x){
     switch(x){
         case 1:
-            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os documentos</p></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Curriculum Vitae.pdf</p></div></a></div>";
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os documentos</p></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Curriculum Vitae.pdf</p></div></a></div><div class='file-holder'><a href='about.pdf' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Sobre o projeto.pdf</p></div></a></div>";
         break;
         case 2:
-            var y = '<p>2</>';
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os downloads</p></div><div class='file-holder'><div class='explorer-file'><img src='img/bat.png'><p>Hack moedas CSGO.bat</p></div></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/minecraft.png'><p>Minecraft.exe</p></div></a></div>";
         break;
         case 3:
-            var y = '<p>3</>';
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos as imagens</p></div><div class='file-holder'><div class='explorer-file'><img src='img/user.jpg'><p>Eu.jpg</p></div></div><div class='file-holder'><div class='explorer-file'><img src='img/link.jpg'><p>Desenho.png</p></div></div>";
         break;
         case 4:
-            var y = '<p>4</>';
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos as músicas</p></div><div class='file-holder'><a href='https://youtu.be/QYh6mYIJG2Y' target='_blank'><div class='explorer-file'><img src='img/thankunext.jpg'><p>Ariana Grande - 7 rings.mp3</p></div></a></div><div class='file-holder'><a href='https://youtu.be/pkNbttZgi90' target='_blank'><div class='explorer-file'><img src='img/trip.png'><p>Mercyur - Trip.mp3</p></div></a></div>";
         break;
         case 5:
-            var y = '<p>5</>';
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os vídeos</p></div><div class='file-holder'><a href='https://youtu.be/JRYLIZE7kas' target='_blank'><div class='explorer-file'><img src='img/video.png'><p>Direitos Humanos.mp4</p></div></a></div>";
         break;
     }
     document.getElementById('program-content').innerHTML = y;
@@ -304,6 +307,7 @@ window.onload = function(){
             document.getElementById('lock-hour').style.width = '38vh';
             document.getElementById('lock-date').style.width = '38vh';
             document.getElementById('notification-holder').style.opacity = '1';
+            openDOS();
         }, 500);
     }, 800);
 };
