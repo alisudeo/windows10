@@ -19,7 +19,7 @@
         <div id='program-holder' align='center'>
             <div id='program' align='center'>
                 <div class='program-top-bar' align='left'>
-                    <p class='program-name'><img src='img/chrome.png' class='program-icon'>&nbsp;Google Chrome</p>
+                    <p id='program-name' class='program-name'></p>
                     <img src='img/close.png' align='right' class='program-close' onclick='closeProgram()'>
                     <img src='img/hint.png' align='right' id='program-hint' class='program-hint' onclick='openHint(2)'>
                 </div>
@@ -325,7 +325,7 @@
                 </div>
             </div>
             <div class='app-icon-padding'>
-                <div class='app-icon' id='app-3' align='center' onmouseover='blueBg(this)' onclick='selectBg(this)' onmouseout='transBg(this)'>
+                <div class='app-icon' id='app-3' align='center' onmouseover='blueBg(this)' onclick='selectBg(this), openProgram(2)' onmouseout='transBg(this)'>
                     <img src='img/explorer.png'>
                     <p>Explorador de...</p>
                 </div>

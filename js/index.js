@@ -190,8 +190,15 @@ function closeHint(){
 function openProgram(x){
     switch(x){
         case 1:
+            var v = 'Google Chrome';
             var w = 'img/chrome.png';
             var y = "<img src='img/google.png' id='google-logo'><input type='text' id='google-search' value='Guaxinins lindos' onclick='this.blur()' onfocus='this.blur()'><div class='result-holder'><img src='https://i.pinimg.com/originals/86/f6/8e/86f68eea9858f4e6eed3a7fa8c7a4854.jpg' class='google-result'></div><div class='result-holder'><img src='https://previews.123rf.com/images/a41cats/a41cats1211/a41cats121100055/16385155-cute-raccoon-on-green-grass-nice-close-up-a.jpg' class='google-result'></div><div class='result-holder'><img src='https://i.ytimg.com/vi/IRdivT8pcl4/maxresdefault.jpg' class='google-result'></div>";
+            var z = "openHint(2)";
+        break;
+        case 2:
+            var v = 'Explorador de arquivos';
+            var w = 'img/explorer.png';
+            var y = "<div id='explorer-address'><p>>>Exibindo todos os arquivos</p></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(1)'><img src='img/folder.png'><p>Documentos</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(2)'><img src='img/folder.png'><p>Download</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(3)'><img src='img/folder.png'><p>Fotos</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(4)'><img src='img/folder.png'><p>Músicas</p></div></div><div class='file-holder'><div class='explorer-file' onclick='openFolder(5)'><img src='img/folder.png'><p>Vídeos</p></div></div>";
             var z = "openHint(2)";
         break;
     }
@@ -200,6 +207,7 @@ function openProgram(x){
     document.getElementById('open-program-img').setAttribute('src', w);
     document.getElementById('program-content').innerHTML = y;
     document.getElementById('program-hint').setAttribute('onclick', z);
+    document.getElementById('program-name').innerHTML = "<img id='program-icon' src='" + w + "' class='program-icon'>&nbsp;" + v;
     document.getElementById('program-holder').style.display = 'block';
     setTimeout(() => {
         document.getElementById('program').style.opacity = '1';
@@ -267,6 +275,27 @@ function notificationOff(x){
     x.setAttribute('src', 'img/bell.png');
 }
 
+function openFolder(x){
+    switch(x){
+        case 1:
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os documentos</p></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Curriculum Vitae.pdf</p></div></a></div>";
+        break;
+        case 2:
+            var y = '<p>2</>';
+        break;
+        case 3:
+            var y = '<p>3</>';
+        break;
+        case 4:
+            var y = '<p>4</>';
+        break;
+        case 5:
+            var y = '<p>5</>';
+        break;
+    }
+    document.getElementById('program-content').innerHTML = y;
+}
+
 window.onload = function(){
     horaCerta(); 
     setTimeout(() => {
@@ -276,5 +305,5 @@ window.onload = function(){
             document.getElementById('lock-date').style.width = '38vh';
             document.getElementById('notification-holder').style.opacity = '1';
         }, 500);
-    }, 8000);
+    }, 800);
 };

@@ -4,6 +4,9 @@
     outline: none;
     font-family: MSS;
 }
+a, a:link, a:visited{
+    text-decoration: none;
+}
 form{
     display: inline-block;
     vertical-align: middle;
@@ -489,7 +492,7 @@ body{
     height: 90vh;
     padding-top: 10vh;
     position: absolute;
-    z-index: 50;
+    z-index: 7;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -514,9 +517,10 @@ body{
 }
 .program-top-bar p{
     padding: 1.1vh 0 0 2vh;
-    width: 26vh;
+    width: 30vh;
     font-size: 2.5vh;
     display: inline-block;
+    margin-left: -1vh;
 }
 .program-icon{
     height: 4vh;
@@ -716,4 +720,54 @@ body{
 }
 #notification-holder img:hover{
     background: rgba(255, 255, 255, 0.4);
+}
+#explorer-address{
+    width: 100%;
+    height: 4.5vh;
+    font-size: 2vh;
+    color: #ddd;
+    background-color: #222;
+    text-align: left;
+    border-bottom: 0.4vh solid #444;
+}
+#explorer-address p{
+    width: 34vh;
+    padding: 1vh 0 0 1vh;
+    display: inline-block;
+    vertical-align: 1.5vh;
+}
+#explorer-back{
+    padding: 0.75vh;
+    height: 3vh;
+    width: 3vh;
+    background-color: rgb(67, 111, 255);
+    transform: rotate(180deg);
+    vertical-align: 0vh;
+    cursor: pointer;
+}
+.file-holder{
+    padding: 2vh 1vh 0 1vh;
+    display: inline-block;
+}
+.explorer-file{
+    height: 14vh;
+    width: 16vh;
+    padding-top: 2vh;
+    border: 0.1vh solid transparent;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.explorer-file:hover{
+    border: 0.1vh solid rgba(89, 161, 255, 0.4);
+    background: rgba(89, 161, 255, 0.2);
+}
+.explorer-file img{
+    width: 8vh;
+    height: 8vh;
+}
+.explorer-file p{
+    margin-top: -0.5vh;
+    font-size: 2vh;
+    line-height: 2.5vh;
+    color: #fff;
 }
