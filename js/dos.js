@@ -47,7 +47,7 @@ function userOptions(a, b){
 function greeting(){
     var yearNow = new Date();
     dosTyping('Em que ano estamos, por favor?', '???');
-    userOptions([yearNow.getFullYear + '.', 'Quem é você?'], ['yearQuestion(1)', 'yearQuestion(2)']);
+    userOptions([yearNow.getFullYear() + '.', 'Quem é você?'], ['yearQuestion(1)', 'yearQuestion(2)']);
 }
 
 function yearQuestion(x){
@@ -65,11 +65,11 @@ function yearQuestion(x){
     }
 }
 
-function teatchMath(){
+function teachMath(){
     var yearNow = new Date();
     dosTyping('Sim.', '???');
     setTimeout(() => {
-        dosTyping(yearNow.getFullYear + ' - 1981 dá ' + (yearNow.getFullYear - 1981) + '.', '???');
+        dosTyping(yearNow.getFullYear() + ' - 1981 dá ' + (yearNow.getFullYear() - 1981) + '.', '???');
         userOptions(['O que aconteceu em 1981?'], ['yearAnswer()']);
     }, 4000);
 }
