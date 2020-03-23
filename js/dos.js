@@ -1,5 +1,6 @@
 function openDOS(){
     document.getElementById('dos-holder').style.display = 'block';
+    document.getElementById('dos').innerHTML = '';
     setTimeout(() => {
         document.getElementById('dos').style.opacity = '1';
         setTimeout(() => {
