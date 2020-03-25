@@ -405,7 +405,8 @@ function iHate(x){
                     }, 3400);
                 }
                 else{
-                    dosTyping("MISCROSOFT?", 'D.O.S.');
+                    cleanMsg();
+                    dosTyping("MICROSOFT?", 'D.O.S.');
                     setTimeout(() => {
                         dosTyping('Eles são meus criadores!', 'D.O.S.');
                         setTimeout(() => {
@@ -515,6 +516,7 @@ function goodListener(){
 }
 
 function appleHistoryMiddle(x){
+    cleanMsg();
     if(x == 1){
         dosTyping('Ah, perdão...', 'D.O.S.');
         setTimeout(() => {
@@ -577,6 +579,7 @@ function appleHistoryMiddle(x){
 }
 
 function appleHistoryEnd(x){
+    cleanMsg();
     if(x == 1){
         dosTyping('Tem razão.', 'D.O.S.');
         setTimeout(() => {
@@ -650,7 +653,7 @@ function boring(){
     }, 3400);
 }
 
-function like(x){
+function like(){
     cleanMsg();
     dosTyping("Ah...", "D.O.S.");
     setTimeout(() => {
@@ -658,12 +661,12 @@ function like(x){
         setTimeout(() => {
             dosTyping("Acho que poderia ter sido mais direto.", 'D.O.S.');
             setTimeout(() => {
-                dosTyping("Mas obrigado!.", 'D.O.S.');
+                dosTyping("Mas obrigado!", 'D.O.S.');
                 setTimeout(() => {
                     dosTyping("Gostei muito da nossa interação.", 'D.O.S.');
                     setTimeout(() => {
                         dosTyping("Talvez seja a minha última...", 'D.O.S.');
-                        if(achievements.includes('Bom interlocutor') == true && achievement.includes('Bom amigo')){
+                        if(achievements.includes('Bom interlocutor') == true && achievements.includes('Bom amigo')){
                             userOptions(["Espera... Eu tenho uma última pergunta!", "Sinto muito por isso."], ["howQuestion()", "bye(1)"]);
                         }
                         else{
