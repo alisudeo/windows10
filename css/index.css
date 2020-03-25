@@ -817,4 +817,16 @@ body{
     font-family: MSDOS !important;
     text-decoration: underline;
     cursor: pointer;
+    font-size: 3vh;
+    color: #eee;
+}
+#user-name-dos{
+    width: 24vh;
+    height: 4vh;
+    border: none;
+    background: transparent;
+    font-family: MSDOS !important;
+    font-size: 3vh;
+    color: #eee;
+    caret-color: #eee;
 }

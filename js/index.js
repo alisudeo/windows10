@@ -307,7 +307,6 @@ window.onload = function(){
             document.getElementById('lock-hour').style.width = '38vh';
             document.getElementById('lock-date').style.width = '38vh';
             document.getElementById('notification-holder').style.opacity = '1';
-            openDOS();
         }, 500);
-    }, 800);
+    }, 8000);
 };
