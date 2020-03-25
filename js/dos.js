@@ -726,9 +726,8 @@ function userName(){
 }
 
 function bye(x){
-    var userName = document.getElementById('user-name-dos').value;
-    cleanMsg();
     if(x == 1){
+        cleanMsg();
         dosTyping("Está tudo bem.", 'D.O.S.');
         setTimeout(() => {
             dosTyping("Bom...", 'D.O.S.');
@@ -745,6 +744,7 @@ function bye(x){
     }
     else{
         if(x == 2){
+            cleanMsg();
             dosTyping("Que bom que gostou.", 'D.O.S.');
             setTimeout(() => {
                 dosTyping("Bom...", 'D.O.S.');
@@ -759,6 +759,8 @@ function bye(x){
         }
         else{
             if(x == 3){
+                cleanMsg();
+                var userName = document.getElementById('user-name-dos').value;
                 achievement('Seu nome');
                 setTimeout(() => {
                     dosTyping(userName, 'D.O.S.');
@@ -778,6 +780,7 @@ function bye(x){
                 }, 4600);
             }
             else{
+                cleanMsg();
                 dosTyping("Adeus.", 'D.O.S.');
                 dosEnding();
             }
