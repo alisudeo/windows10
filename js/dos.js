@@ -736,7 +736,9 @@ function bye(x){
             dosTyping("Bom...", 'D.O.S.');
             setTimeout(() => {
                 dosTyping("Adeus.", 'D.O.S.');
-                dosEnding();
+                setTimeout(() => {
+                    dosEnding();
+                }, 8000);
             }, 3400);
         }, 3400);
     }
@@ -750,7 +752,9 @@ function bye(x){
                     dosTyping("Acho que é hora de ir...", 'D.O.S.');
                     setTimeout(() => {
                         dosTyping("Adeus.", 'D.O.S.');
-                        dosEnding();
+                        setTimeout(() => {
+                            dosEnding();
+                        }, 8000);
                     }, 3400);
                 }, 3400);
             }, 3400);
@@ -792,22 +796,28 @@ function dosEnding(){
     cleanMsg();
     var aTT = achievements.length;
     setTimeout(() => {
-        endingSpeak("[!]Você atingiu " + aTT + "/5 conquistas:");
-        var i = 0;
-
-        var loop = setInterval(() => {
-            if((i + 1) < aTT){
-                i++;
-                endingSpeak("[!]" + achievements[i] + ".");
-            }
-            else{
-                endingSpeak("[!]Até a proxima.");
-                setTimeout(() => {
+        if(aTT != 0){
+            endingSpeak("[=]Você atingiu " + aTT + "/5 conquistas:");
+            var i = 0;
+            var loop = setInterval(() => {
+                if((i + 1) <= aTT){
+                    endingSpeak("[=]" + achievements[i] + ".");
+                    i++;
+                }
+                else{
+                    endingSpeak("[!]Encerrando...");
                     closeDOS();
-                }, 12000);
-                clearInterval(loop);
-            }
-        }, 6000);
+                    clearInterval(loop);
+                }
+            }, 3000);
+        }
+        else{
+            endingSpeak("[=]Você atingiu " + aTT + "/5 conquistas.");
+            setTimeout(() => {
+                endingSpeak("[!]Encerrando...");
+                closeDOS();
+            }, 4000);
+        }
     }, 1000);
 }
 
