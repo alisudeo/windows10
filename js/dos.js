@@ -757,8 +757,8 @@ function bye(x){
         }
         else{
             if(x == 3){
-                cleanMsg();
                 var userName = document.getElementById('user-name-dos').value;
+                cleanMsg();
                 achievement('Seu nome');
                 setTimeout(() => {
                     dosTyping(userName, 'D.O.S.');
