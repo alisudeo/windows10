@@ -281,7 +281,7 @@ function notificationOff(x){
 function openFolder(x){
     switch(x){
         case 1:
-            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os documentos</p></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Curriculum Vitae.pdf</p></div></a></div><div class='file-holder'><a href='about.pdf' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Sobre o projeto.pdf</p></div></a></div>";
+            var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os documentos</p></div><div class='file-holder'><a href='https://alisudeo.github.io/portfolio' target='_blank'><div class='explorer-file'><img src='img/pdf.png'><p>Curriculum Vitae.pdf</p></div></a></div><div class='file-holder'><a href='https://github.com/alisudeo/windows10' target='_blank'><div class='explorer-file'><img src='img/github.png'><p>Sobre o projeto</p></div></a></div>";
         break;
         case 2:
             var y = "<div id='explorer-address'><img src='img/arrow-go.png' id='explorer-back' onclick='openProgram(2)'><p>>>Exibindo todos os downloads</p></div><div class='file-holder'><div class='explorer-file'><img src='img/bat.png'><p>Hack moedas CSGO.bat</p></div></div><div class='file-holder'><a href='https://minecraft.net' target='_blank'><div class='explorer-file'><img src='img/minecraft.png'><p>Minecraft.exe</p></div></a></div>";
