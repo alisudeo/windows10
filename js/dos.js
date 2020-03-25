@@ -761,21 +761,23 @@ function bye(x){
                 cleanMsg();
                 achievement('Seu nome');
                 setTimeout(() => {
-                    dosTyping(userName, 'D.O.S.');
+                    dosTyping(userName + ".", 'D.O.S.');
                     setTimeout(() => {
                         dosTyping("Bonito nome.", 'D.O.S.');
                         setTimeout(() => {
                             dosTyping("Bom...", 'D.O.S.');
                             setTimeout(() => {
-                                dosTyping("Vou sentir saudades, " + userName, 'D.O.S.');
+                                dosTyping("Vou sentir saudades, " + userName + ".", 'D.O.S.');
                                 setTimeout(() => {
                                     dosTyping("Adeus.", 'D.O.S.');
-                                    dosEnding();
+                                    setTimeout(() => {
+                                        dosEnding();
+                                    }, 8000);
                                 }, 3400);
                             }, 3400);
                         }, 3400);
                     }, 3400);
-                }, 4600);
+                }, 8000);
             }
             else{
                 cleanMsg();
@@ -788,7 +790,7 @@ function bye(x){
 
 function dosEnding(){
     cleanMsg();
-    var aTT = achievements.length
+    var aTT = achievements.length;
     setTimeout(() => {
         endingSpeak("[!]Você atingiu " + aTT + "/5 conquistas:");
         var i = 0;
@@ -803,9 +805,9 @@ function dosEnding(){
                 endingSpeak("[!]Até a proxima.");
                 setTimeout(() => {
                     closeDOS();
-                }, 10000);
+                }, 12000);
             }
-        }, 4000);
+        }, 6000);
     }, 1000);
 }
 
