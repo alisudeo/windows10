@@ -796,16 +796,16 @@ function dosEnding(){
         var i = 0;
 
         var loop = setInterval(() => {
-            endingSpeak("[!]" + achievements[i] + ".");
             if((i + 1) < aTT){
                 i++;
+                endingSpeak("[!]" + achievements[i] + ".");
             }
             else{
-                clearInterval(loop);
                 endingSpeak("[!]Até a proxima.");
                 setTimeout(() => {
                     closeDOS();
                 }, 12000);
+                clearInterval(loop);
             }
         }, 6000);
     }, 1000);
