@@ -736,12 +736,7 @@ function bye(x){
             dosTyping("Bom...", 'D.O.S.');
             setTimeout(() => {
                 dosTyping("Adeus.", 'D.O.S.');
-                setTimeout(() => {
-                    document.getElementById('dos').style.opacity = '0';
-                    setTimeout(() => {
-                        document.getElementById('dos-holder').style.display = 'none';
-                    }, 400);
-                }, 8000);
+                dosEnding();
             }, 3400);
         }, 3400);
     }
