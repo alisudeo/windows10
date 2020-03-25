@@ -481,16 +481,18 @@ function appleHistoryBegin(x){
     else{
         dosTyping('Ok! Eu vou contar do mesmo jeito.', 'D.O.S.');
     }
-    dosTyping("Tudo começa em 1975, quando Bill Gatos e Paul Allen fundaram a Microsoft.", 'D.O.S.');
     setTimeout(() => {
-        dosTyping('Eles saíram da faculdade para se dedicar a empresa!', 'D.O.S.');
+        dosTyping("Tudo começa em 1975, quando Bill Gates e Paul Allen fundaram a Microsoft.", 'D.O.S.');
         setTimeout(() => {
-            dosTyping('(Eu não recomendo!)', 'D.O.S.');
+            dosTyping('Eles saíram da faculdade para se dedicar a empresa!', 'D.O.S.');
             setTimeout(() => {
-                dosTyping('A Microsoft foi criada para desenvolver um software para a empresa IBM.', 'D.O.S.');
+                dosTyping('(Eu não recomendo!)', 'D.O.S.');
                 setTimeout(() => {
-                    dosTyping('Esse software seria executado no computador Altair 8800, também da IBM.', 'D.O.S.');
-                    userOptions(["Muitos detalhes.", "Estou acompanhando."], ['appleHistoryMiddle(1)','goodListener()']);
+                    dosTyping('A Microsoft foi criada para desenvolver um software para a empresa IBM.', 'D.O.S.');
+                    setTimeout(() => {
+                        dosTyping('Esse software seria executado no computador Altair 8800, também da IBM.', 'D.O.S.');
+                        userOptions(["Muitos detalhes.", "Estou acompanhando."], ['appleHistoryMiddle(1)','goodListener()']);
+                    }, 3400);
                 }, 3400);
             }, 3400);
         }, 3400);
